@@ -69,22 +69,17 @@ struct T
 
 struct L                                //4
 {
+
     T* compare(T* a, T* b) //5
     {
-        if ( (a == nullptr) || (b == nullptr) || (a->value == b->value) ) 
+        if( a != nullptr && b != nullptr )
         {
-            return nullptr;
+            if( a->value < b->value ) return a;	
+            if( a->value > b->value ) return b;
         }
-        
-        if( a->value < b->value ) 
-        {
-            return a;
-        }
-        else 
-        {
-            return b;
-        }
-    }
+
+        return nullptr;
+    } 
 };
 
 
